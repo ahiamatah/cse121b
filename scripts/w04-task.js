@@ -49,6 +49,14 @@ myProfile.hobbies.forEach(hobby => {
 /* Places Lived DataList */
 
 
-let dt = document.createElement('dt');
-dt.textContent = myProfile.placeLived;
-document.querySelector('#places-lived').appendChild(dt);
+const placesLivedDL = document.getElementById("places-lived");
+myProfile.placeLived.forEach(item => {
+    const dtElement = document.createElement("dt");
+    dtElement.textContent = item.place;
+
+    const ddElement = document.createElement("dd");
+    ddElement.textContent = item.length;
+
+    placesLivedDL.appendChild(dtElement);
+    placesLivedDL.appendChild(ddElement);
+});
